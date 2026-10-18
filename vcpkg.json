@@ -1,14 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
-  "name": "skse-clibng-template",
+  "name": "item-based-tempering",
   "version-string": "0.0.1",
-  "description": "SKSE CommonLibSSE-NG Template",
+  "description": "Item Based Tempering",
   "homepage": "https://github.com/epinter/skse-clibng-template",
   "features": {
     "plugin": {
       "description": "SKSE plugin",
       "dependencies": [
-        "spdlog"
+        "spdlog",
+		"simpleini"
       ]
     },
     "clibng-support": {

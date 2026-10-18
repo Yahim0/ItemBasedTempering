@@ -77,3 +77,5 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND "C:\\games\\Skyrim\\skse64_loader.exe" WORKING_DIRECTORY "C:\\games\\Skyrim"
 )
 ~~~
+
+ <sup><sub>Source code in this repository is released under CC0 1.0. Binary builds statically link CommonLibSSE-NG (GPL-3.0-or-later) and are distributed under GPL-3.0-or-later, with the source available in this repository.</sub></sup>

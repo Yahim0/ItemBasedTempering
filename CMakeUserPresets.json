@@ -1,0 +1,24 @@
+{
+  "version": 5,
+  "configurePresets": [
+    {
+      "name": "linux-base",
+      "hidden": true,
+      "inherits": ["common"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-clangcl",
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/extern/CommonLibSSE-NG/examples/linux-cross-compile/custom-triplets",
+        "VCPKG_OVERLAY_PORTS": "${sourceDir}/extern/CommonLibSSE-NG/examples/linux-cross-compile/custom-ports",
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/extern/CommonLibSSE-NG/cmake/toolchain-linux-clangcl.cmake",
+        "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
+        "CMAKE_CXX_FLAGS": "-DWIN32_LEAN_AND_MEAN -DNOMINMAX -DUNICODE -D_UNICODE /permissive- /EHsc /bigobj -Wno-overloaded-virtual -Wno-delete-non-abstract-non-virtual-dtor -Wno-inconsistent-missing-override -Wno-reinterpret-base-class -Wno-nonportable-include-path -Wno-deprecated-copy-with-user-provided-copy -Wno-invalid-offsetof -Wno-switch -Wno-unused-command-line-argument -Wno-deprecated-volatile -Wno-unused-private-field"
+      }
+    },
+    { "name": "linux",    "inherits": ["linux-base", "build-ng"] },
+    { "name": "linux-vr", "inherits": ["linux-base", "build-vr"] },
+    { "name": "linux-all", "inherits": ["linux-base", "build-ng", "build-vr"] }
+  ]
+}

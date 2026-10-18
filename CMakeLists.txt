@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.25)
 
 project(
-        Template
-        VERSION 0.0.1
+        ItemBasedTempering
+        VERSION 1.3.6
         LANGUAGES CXX)
 set(PROJECT_LICENSE "The project license")
 set(PROJECT_FRIENDLY_NAME ${PROJECT_NAME})
-set(PROJECT_LONG_NAME "Template CommonLibSSE-NG")
+set(PROJECT_LONG_NAME "Item Based Tempering")
 set(PROJECT_DESCRIPTION ${PROJECT_LONG_NAME})
 set(PROJECT_COPYRIGHT "Copyright")
 
