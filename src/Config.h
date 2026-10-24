@@ -1,4 +1,4 @@
-namespace SensibleTempering {
+namespace ItemBasedTempering {
     class Config {
     public:
         static void LoadConfig() noexcept;

@@ -5,7 +5,7 @@ using namespace SKSE::stl;
 #include "Plugin.h"
 #include "Config.h"
 
-namespace SensibleTempering {
+namespace ItemBasedTempering {
     std::optional<std::filesystem::path> getLogDirectory() {
         using namespace std::filesystem;
         PWSTR buf;
@@ -51,7 +51,7 @@ namespace SensibleTempering {
     }
 }  // namespace plugin
 
-using namespace SensibleTempering;
+using namespace ItemBasedTempering;
 
 class TemperHooks {
 
@@ -325,12 +325,15 @@ public:
             SetGMSTFloat("fSmithingWeaponMax", 10.0f);
             getArBonus = getArBonusItemBased;
             getDmg = getDamageItemBased;
+            logger::info("Loaded ItemBasedMode");
         } else if (mode == 2l) {
             getArBonus = getArBonusVanillaPlus;
             getDmg = getDamageVanillaPlus;
+            logger::info("Loaded VanillaPlusMode");
         } else if (mode == 3l) {
             getArBonus = getArBonusFallback;
             getDmg = getDamageFallback;
+            logger::info("Loaded FallbackMode");
         } else {
             logger::info("temperingMode invalid. Mod disabled.");
             return;

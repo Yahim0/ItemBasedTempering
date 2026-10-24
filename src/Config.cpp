@@ -1,14 +1,14 @@
 #include "Config.h"
 #include "SimpleIni.h"
 
-namespace SensibleTempering {
+namespace ItemBasedTempering {
     void Config::LoadConfig() noexcept
     {
         logger::info("Loading config");
 
         CSimpleIniA ini;
         ini.SetUnicode();
-        if (ini.LoadFile(R"(.\Data\SKSE\Plugins\SensibleTempering.ini)") != 0) {
+        if (ini.LoadFile(R"(.\Data\SKSE\Plugins\ItemBasedTempering.ini)") != 0) {
             logger::error("Failed to Load config file.");
             return;
         }
